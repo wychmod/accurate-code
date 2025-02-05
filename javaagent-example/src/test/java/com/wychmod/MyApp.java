@@ -11,5 +11,7 @@ public class MyApp {
 
     public static void main(String[] args) throws IOException {
         System.out.println("hello main");
+        new HelloWorld().hello();
+        System.in.read();
     }
 }

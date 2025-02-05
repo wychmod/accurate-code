@@ -12,7 +12,7 @@
     <name>javaagent-example</name>
 
     <properties>
-        <JAVA_HOME>/Library/Java/JavavirtualMachines/zuLu-8.jdk/Contents/Home</JAVA_HOME>
+        <JAVA_HOME>D:\coding\zulujdk1.8</JAVA_HOME>
     </properties>
 
     <dependencies>
