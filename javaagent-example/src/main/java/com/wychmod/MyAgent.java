@@ -3,10 +3,7 @@ package com.wychmod;
 import javassist.*;
 
 import java.io.IOException;
-import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
-import java.lang.instrument.Instrumentation;
-import java.lang.instrument.UnmodifiableClassException;
+import java.lang.instrument.*;
 import java.security.ProtectionDomain;
 
 /**
@@ -79,6 +76,26 @@ public class MyAgent {
         } catch (UnmodifiableClassException e) {
             e.printStackTrace();
         }
+
+        // 触发重定义
+        try {
+            // 创建一个新的类池来管理类
+            ClassPool pool = new ClassPool();
+            // 将系统路径添加到类池中，以确保可以访问系统类
+            pool.appendSystemPath();
+            // 获取要转换的类
+            CtClass ctClass = pool.get("com.wychmod.HelloWorld");
+            // 获取类中的"hello"方法
+            CtMethod ctMethod = ctClass.getDeclaredMethod("hello");
+            // 在"hello"方法的开始处插入新的代码
+            ctMethod.insertAfter("System.out.println(\"插入后置逻辑\");");
+            // 重新定义类，这是通过将修改后的类字节码加载到JVM中实现的
+            // 此操作通常用于在运行时增强或修改类的行为
+            inst.redefineClasses(new ClassDefinition(HelloWorld.class, ctClass.toBytecode()));
+        } catch (NotFoundException | CannotCompileException | IOException | UnmodifiableClassException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**

@@ -48,7 +48,8 @@
                             <Project-name>${project.name}</Project-name>
                             <Project-version>${project.version}</Project-version>
                             <Premain-Class>com.wychmod.MyAgent</Premain-Class>
-                            <Agent-Class>com.wychmod.MyAgent</Agent-Class>
+<!--                            <Agent-Class>com.wychmod.MyAgent</Agent-Class>-->
+                            <Agent-Class>com.wychmod.jvmtool.Agent</Agent-Class>
                             <Can-Redefine-Classes>true</Can-Redefine-Classes>
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                         </manifestEntries>
