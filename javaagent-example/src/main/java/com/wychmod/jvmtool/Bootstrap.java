@@ -12,7 +12,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 /**
- * @description:
+ * @description: jvm监控启动类
  * @author: wychmod
  * @date: 2025-02-09
  */
