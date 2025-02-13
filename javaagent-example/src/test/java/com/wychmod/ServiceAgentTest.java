@@ -8,8 +8,8 @@ import com.wychmod.timingcalculation.UserServiceImpl;
  * @date: 2025-02-11
  */
 public class ServiceAgentTest {
-    public static void testTime(String[] args) {
+    public static void main(String[] args) {
         UserServiceImpl userService = new UserServiceImpl();
-        userService.findUser("wychmod");
+        userService.findUser("111");
     }
 }
