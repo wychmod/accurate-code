@@ -11,5 +11,6 @@ public class Agent {
 
     public static void premain(String args, Instrumentation instrumentation) {
         instrumentation.addTransformer(new ServiceAgentCopy());
+        instrumentation.addTransformer(new MybatisAgent());
     }
 }
