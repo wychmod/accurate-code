@@ -12,7 +12,7 @@ import java.security.ProtectionDomain;
 import java.util.Date;
 
 /**
- * @description:
+ * @description: mybatis代理打印sql，在springboot命令行执行会有问题，缺陷版，无法找到BoundSql包
  * @author: wychmod
  * @date: 2025-02-16
  */
